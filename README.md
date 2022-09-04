@@ -9,7 +9,7 @@
 
 ## Requirements and versions
 
-- ***python***
+- ***python 3.6-alpine***
 - ***Django 2.0.10*** (:8000)
 - ***Docker***
 - ***Docker-Compose***
