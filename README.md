@@ -9,20 +9,56 @@
 
 ## Requirements and versions
 
-- ***python 3.6-alpine***
-- ***Django 2.0.10*** (:8000)
 - ***Docker***
 - ***Docker-Compose***
-- ***PostgreSQL*** (:5432)
-- ***Redis 2.10.6 and django-redis 4.10.0*** (:6379)
-- ***Celery 4.2.1*** (:5555)
+
+and
+
+- *python 3.6-alpine*
+- *Django 2.0.10* (:8000)
+- *PostgreSQL 10.5* (:5432)
+- *Redis 3.2.0 and django-redis 4.10.0* (:6379)
+- *Celery 4.2.1* (:5555)
 
 ## How to run locally?
 
-Don't forget (once):
+You can export your compose file to simplify the commands.
 
 ```
-docker-compose -f local.yml build
+export COMPOSE_FILE=local.yml
+```
+
+| task | with YML file | before export COMPOSE_FILE |
+| --- | --- | --- |
+| Build containers | docker-compose -f local.yml build | docker-compose build |
+| Run stack | docker-compose -f local.yml up | docker-compose up |
+| Print containers | docker-compose -f local.yml ps | docker-compose ps |
+| Stop and delete containers | docker-compose -f local.yml down | docker-compose down |
+
+**Print images**
+
+```
+docker images
+```
+
+**Admin commands**
+
+```
+docker-compose run --rm django COMMAND
+
+example
+
+- docker-compose run --rm django python manage.py createsuperuser
+```
+
+**Super user test**
+
+```
+admin
+
+admin@example.com
+
+admin1234..
 ```
 
 ## Endpoints
