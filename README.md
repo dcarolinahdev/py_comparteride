@@ -61,6 +61,24 @@ admin@example.com
 admin1234..
 ```
 
+**Enable debugger**
+
+```
+docker-compose up
+docker-compose ps
+docker rm -f <ID>
+docker rm -f comparte_ride_django_1
+
+docker-compose run --rm --service-ports django
+```
+
+example
+
+```
+in config/settings/urls.py after imports:
+import ipdb; ipdb.set_trace()
+```
+
 ## Endpoints
 
 | route | meaning |
